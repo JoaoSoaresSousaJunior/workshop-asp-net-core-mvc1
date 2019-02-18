@@ -9,7 +9,7 @@ namespace SalesWebMvc.Models
         public int Id { get; set; }
         public string  Nome { get; set; }
         public string Email { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime DataNascimento { get; set; }
         public double SalarioBase { get; set; }
         public Departments Departments { get; set; }
         public ICollection<SalesRecords> SalesRecords = new List<SalesRecords>();
@@ -23,7 +23,7 @@ namespace SalesWebMvc.Models
             Id = id;
             Nome = nome;
             Email = email;
-            Date = date;
+            DataNascimento = date;
             SalarioBase = salarioBase;
             Departments = departments;
         }

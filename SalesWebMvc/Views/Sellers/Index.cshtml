@@ -1,8 +1,55 @@
-﻿
+﻿@model IEnumerable<SalesWebMvc.Models.Sellers>
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Sellers</h2>
+<h2>@ViewData["Title"]</h2>
 
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                E-mail
+            </th>
+            <th>
+                Data Nascimento
+            </th>
+            <th>
+                Salário Base
+            </th>
+            <th>
+                Ações
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataNascimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalarioBase)
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Alterar</a>
+            <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+            <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+
+
+        </td>
+    </tr>
+
+    }
+</table>
 <p>Índice da Página de Vendedores</p>
