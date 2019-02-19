@@ -1,4 +1,4 @@
-﻿@model SalesWebMvc.Models.Sellers  
+﻿@model SalesWebMvc.Models.ViewModels.SellersFormViewModel
 @{
     ViewData["Title"] = "Novo Vendedor";
 }
@@ -13,23 +13,33 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
+                <label asp-for="Sellers.Nome" class="control-label"></label>
+                <input asp-for="Sellers.Nome" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <label asp-for="Sellers.Email" class="control-label"></label>
+                <input asp-for="Sellers.Email" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="DataNascimento" class="control-label"></label>
-                <input asp-for="DataNascimento" class="form-control" />
+                <label asp-for="Sellers.DataNascimento" class="control-label"></label>
+                <input asp-for="Sellers.DataNascimento" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="SalarioBase" class="control-label"></label>
-                <input asp-for="SalarioBase" class="form-control" />
+                <label asp-for="Sellers.SalarioBase" class="control-label"></label>
+                <input asp-for="Sellers.SalarioBase" class="form-control" />
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Incluir" class="btn btn-default"/>
+                <label asp-for="Sellers.DepartmentsId" class="control-label"></label>
+                <select asp-for="Sellers.DepartmentsId" asp-items="@(new SelectList(Model.Departments, "Id","Descricao"))"
+                        class="form-control"></select>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Incluir" class="btn btn-default" />
 
             </div>
         </form>
