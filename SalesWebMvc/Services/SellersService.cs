@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace SalesWebMvc.Services
 {
@@ -29,7 +29,7 @@ namespace SalesWebMvc.Services
 
         public Sellers FindById(int id)
         {
-            return _context.Sellers.FirstOrDefault(objeto => objeto.Id == id);
+            return _context.Sellers.Include(objeto => objeto.Departments).FirstOrDefault(objeto => objeto.Id == id);
 
         }
         public void Remove(int id)
