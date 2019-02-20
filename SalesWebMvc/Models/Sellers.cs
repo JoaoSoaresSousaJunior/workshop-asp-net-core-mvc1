@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace SalesWebMvc.Models
@@ -8,11 +9,26 @@ namespace SalesWebMvc.Models
     {
         public int Id { get; set; }
         public string  Nome { get; set; }
+
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+
+        [Display(Name = "Data de Nascimento")]
+        [DataType(DataType.Date)]
         public DateTime DataNascimento { get; set; }
+
+        
+        [DataType(DataType.Currency)]
+       /* [DisplayFormat(DataFormatString = "{0:F2}")] */
+        [Display(Name = "Salário Base")]
         public double SalarioBase { get; set; }
+
+        
         public Departments Departments { get; set; }
+
+        [Display(Name = "Departamento")]
         public int DepartmentsId  { get; set; }
+
         public ICollection<SalesRecords> SalesRecords = new List<SalesRecords>();
 
         public Sellers()
