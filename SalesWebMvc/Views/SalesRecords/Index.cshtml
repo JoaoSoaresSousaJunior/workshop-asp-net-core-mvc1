@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Vendas";
+}
+
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form class="form-horizontal" asp-action="SimpleSearch">
+            <fieldset>
+                <legend>Pesquisa Simples</legend>
+                <div class="form-group">
+                    <label for="MinDate" class="col-lg-2 control-label">De</label>
+                    <div class=" col-lg-10">
+                        <input type="date" name="MinDate" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="MaxDate" class="col-lg-2 control-label">Até</label>
+                    <div class=" col-lg-10">
+                        <input type="date" name="MaxDate" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form class="form-horizontal" asp-action="GroupingSearch">
+            <fieldset>
+                <legend>Pesquisa Agrupada</legend>
+                <div class="form-group">
+                    <label for="MinDate" class="col-lg-2 control-label">De</label>
+                    <div class=" col-lg-10">
+                        <input type="date" name="MinDate" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="MaxDate" class="col-lg-2 control-label">Até</label>
+                    <div class=" col-lg-10">
+                        <input type="date" name="MaxDate" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
